@@ -12,7 +12,7 @@ public class H1T1 {
         while (keyboard.hasNextInt()) {
             arr.add(keyboard.nextInt());
         }
-        System.out.println("Колличество введёных чисел:"+arr.size());
+        System.out.println("Колличество введёных чисел:" + arr.size());
 
         int count = 0;
         for (int i = 0; i < arr.size(); i++) {
@@ -20,6 +20,6 @@ public class H1T1 {
                 count++;
             }
         }
-        System.out.println("Колличество положительных чисел:"+count);
+        System.out.println("Колличество положительных чисел:" + count);
     }
-    }
+}
