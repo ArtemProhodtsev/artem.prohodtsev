@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Task2 {
+public class test {
     public static void main(String[] args) {
         int s = summa();
         System.out.println("По условию задачи 1 метод summa() нам вернул:" + " " + s);
