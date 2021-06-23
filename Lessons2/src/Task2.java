@@ -1,3 +1,5 @@
+import java.util.stream.IntStream;
+
 public class Task2 {
     public static void main(String[] args) {
         int s = summa(10, -90);
@@ -12,9 +14,9 @@ public class Task2 {
         int maxArray = arrmax(new int[]{10, 45, 3, 10, 5});
         System.out.println("Максимальный элемент по задаче 4 из массива чисел:" + " " + maxArray);
 
-        double hyp = calculateHypotenuse(12,15);
+        double hyp = calculateHypotenuse(12, 15);
         String formattedHyp = String.format("%.2f", hyp);
-        System.out.println("Значение гиппотенузы по задаче 5:" +" "+formattedHyp);
+        System.out.println("Значение гиппотенузы по задаче 5:" + " " + formattedHyp);
     }
 
     /**
@@ -23,9 +25,8 @@ public class Task2 {
      **/
     public static int summa(int a, int b) {
         int summaAB = a + b;
-        int maxAB = Math.max(a, b);
-        if (summaAB > maxAB) {
-            return (-1); //
+        if (summaAB > Integer.MAX_VALUE) {
+            return -1; //
         } else {
             return summaAB;
         }
@@ -35,32 +36,27 @@ public class Task2 {
      * Метод должен вернуть максимальное значение из двух чисел
      **/
     public static int max(int a, int b) {
-        int maxAB = Math.max(a, b);
-        return (maxAB);
+        return (Math.max(a, b));
     }
 
     /**
      * Метод должен вернуть среднее значение из массива чисел
      **/
     public static double average(int[] array) {
-        double sum = 0;
-        double count = 0;
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] < 0) {
-                sum += array[i];
-                count++;
-            }
-        }
-        return sum/count;
+        int sum = IntStream.of(array).sum();
+        double count = array.length;
+        return sum / count;
     }
+
     /**
      * Метод должен вернуть максимальый элемент массива.
      **/
     public static int arrmax(int[] array) {
 
         int maxArr = array[0];
-        for (int i = 1; i < array.length; i++)
+        for (int i = 1; i < array.length; i++) {
             maxArr = Math.max(maxArr, array[i]);
+        }
         return maxArr;
     }
 
