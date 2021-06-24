@@ -62,7 +62,7 @@ public class Task2 {
             }
             return maxValue;
         } else {
-            return (0);
+            return 0;
         }
     }
 
