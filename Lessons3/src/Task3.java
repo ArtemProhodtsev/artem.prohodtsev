@@ -9,6 +9,9 @@ public class Task3 {
         int number = operation(0);
         System.out.println("Задача 2: Номер в зависимости от условия: " + number);
 
+        System.out.println("Задача 3: Склонение в зависимости от числа");
+        countDevs(2);
+        System.out.println();
         /**
          * Необходимо прочитать с консоли значение числа типа int,
          * далее создать одноменрый массив типа int размера прочитаного с консоли
@@ -56,6 +59,31 @@ public class Task3 {
             }
         }
         return odd;
+    }
+
+    /**
+     * На вход приходит число.
+     * Вывести в консоль фразу из разряда "_COUNT_ программистов",
+     * заменить _COUNT_ на число которое пришло на вход в метод и заменить окончание в слове "программистов" на
+     * уместное с точки зрения русского языка.
+     * Пример: 1 программист, 42 программиста, 50 программистов
+     */
+    public static void countDevs(int count) {
+        System.out.print("Введите любое целове число: ");
+        Scanner scanner = new Scanner(System.in);
+        count = scanner.nextInt();
+        String word = "";
+        if (count % 10 == 1) {
+            word = "Программист";
+        }
+        if ((count % 10 >= 1) && (count % 10 <= 4)) {
+            word = "Программистa";
+        }
+        if ((count % 10 == 0) || (count % 10 >= 5) && (count % 10 <= 9)) {
+            word = "Программистов";
+        }
+        System.out.printf("%d %s", count, word);
+
     }
 }
 
