@@ -16,6 +16,8 @@ public class Task3 {
         printArray();
         System.out.println();
 
+        foobar(6);
+        foobar(10);
         foobar(15);
     }
 
