@@ -19,6 +19,8 @@ public class Task3 {
         foobar(6);
         foobar(10);
         foobar(15);
+
+        calculateSumOfDiagonalElements(3);
     }
 
     /**
@@ -85,17 +87,19 @@ public class Task3 {
      * Пример: 1 программист, 42 программиста, 50 программистов
      */
     public static void countDevs(int count) {
-        System.out.print("Введите любое целове число: ");
+        System.out.print("Введите любое целое число: ");
         Scanner scanner = new Scanner(System.in);
         count = scanner.nextInt();
+        int с10 = count % 10;
+        int c100 = count % 100;
         String word = "";
-        if (count % 10 == 1) {
+        if (с10 == 1) {
             word = "Программист";
         }
-        if ((count % 10 >= 2) && (count % 10 <= 4)) {
+        if ((с10 >= 2) && (с10 <= 4)) {
             word = "Программиста";
         }
-        if ((count % 10 == 0) || (count % 10 >= 5) && (count % 10 <= 9)) {
+        if (((с10 == 0) || (с10 >= 5) && (с10 <= 9)) || (c100 >= 11) && (c100 < 14)) {
             word = "Программистов";
         }
         System.out.printf("%d %s", count, word);
@@ -124,20 +128,33 @@ public class Task3 {
     /**
      * заполнить рандомно 2-х мерный массив и посчитать сумму элементов на диагонали
      */
-//    public static void calculateSumOfDiagonalElements() {
-//        //пишем логику и выводим результат используя System.out.println
-//        Scanner scanner = new Scanner(System.in);
-//        System.out.println("Введи размерность матрицы: ");
-//        int rows = scanner.nextInt();
-//        int[][] arr = new int[rows][rows];
-//        Random random = new Random();
-//        for (int i = 0; i < rows; i++) {
-//            for (int j = 0; j < rows; j++) {
-//                arr[i][j] = random.nextInt();
-//            }
-//    }
-//}
+    public static int calculateSumOfDiagonalElements(int rows) {
+        int summa = 0;
+        int[][] myArray = new int[rows][rows];
+        Random random = new Random();
+        for (int i = 0; i < myArray.length; i++) {
+            for (int j = 0; j < myArray[i].length; j++) {
+                myArray[i][j] = random.nextInt();
+            }
+        }
+        System.out.println("Сгенерированная матрица по задаче 6: ");
+        for (int i = 0; i < myArray.length; i++, System.out.println()) {
+            for (int j = 0; j < myArray[i].length; j++) {
+                System.out.print(myArray[i][j] + " ");
+            }
+        }
+        for (int i = 0; i < myArray.length; i++) {
+            for (int j = 0; j < myArray[i].length; j++) {
+                if (i == j) {
+                    summa += myArray[i][j];
+                }
+            }
+        }
+        System.out.println("Сумма элементов по диагонали матрицы по задаче 6 = " + summa);
+        return (rows);
+    }
 }
+
 
 
 
