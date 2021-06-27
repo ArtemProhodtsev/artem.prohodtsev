@@ -10,8 +10,10 @@ public class Task3 {
         System.out.println("Задача 2: Номер в зависимости от условия: " + number);
 
         System.out.println("Задача 4: Склонение в зависимости от числа");
-        countDevs(2);
-        System.out.println();
+        for (int i = 0; i <= 1000; i++) {
+            countDevs(i);
+            System.out.println();
+        }
 
         printArray();
         System.out.println();
@@ -21,6 +23,10 @@ public class Task3 {
         foobar(15);
 
         calculateSumOfDiagonalElements(3);
+
+//        printMatrix(2, 3);
+        System.out.println("Задача 8: Вывод простых чисел");
+        printPrimeNumbers(1000);
     }
 
     /**
@@ -87,19 +93,17 @@ public class Task3 {
      * Пример: 1 программист, 42 программиста, 50 программистов
      */
     public static void countDevs(int count) {
-        System.out.print("Введите любое целое число: ");
-        Scanner scanner = new Scanner(System.in);
-        count = scanner.nextInt();
+//        System.out.print("Введите любое целое число: ");
+//        Scanner scanner = new Scanner(System.in);
+//        count = scanner.nextInt();
         int с10 = count % 10;
         int c100 = count % 100;
         String word = "";
         if (с10 == 1) {
             word = "Программист";
-        }
-        if ((с10 >= 2) && (с10 <= 4)) {
+        } else if ((с10 >= 2) && (с10 <= 4)) {
             word = "Программиста";
-        }
-        if (((с10 == 0) || (с10 >= 5) && (с10 <= 9)) || (c100 >= 11) && (c100 < 14)) {
+        } else if (((с10 == 0) || (с10 >= 5) && (с10 <= 9)) || (c100 >= 11) && (c100 < 14)) {
             word = "Программистов";
         }
         System.out.printf("%d %s", count, word);
@@ -151,10 +155,80 @@ public class Task3 {
             }
         }
         System.out.println("Сумма элементов по диагонали матрицы по задаче 6 = " + summa);
-        return (rows);
+        return rows;
+    }
+
+    /**
+     * Шаги по реализации:
+     * - Прочитать два int из консоли
+     * - Создайте двумерный массив int (используйте целые числа, которые вы читаете по высоте и ширине консоли)
+     * - Заполнить массив случайными значениями (до 100)
+     * - Вывести в консоль матрицу заданного размера, но:
+     * - Если остаток от деления элемента массива на 3 равен нулю - выведите знак "+" вместо значения элемента массива.
+     * - Если остаток от деления элемента массива на 7 равен нулю - выведите знак "-" вместо значения элемента массива.
+     * - В противном случае выведите "*"
+     * <p>
+     * Example:
+     * - Значения с консоли - 2 и 3
+     * - Массив будет выглядеть так (значения будут разными, потому что он случайный)
+     * 6 11 123
+     * 1 14 21
+     * - Для этого значения вывод в консоли должен быть:
+     * <p>
+     * + * *
+     * * - +
+     * <p>
+     * Обратите внимание, что 21% 3 == 0 и 21% 7 = 0, но выводить надо не +-, а +
+     */
+//    public static void printMatrix(int size1, int size2) {
+//        int[][] matrix = new int[size1][size2];
+//        Random random = new Random();
+//        for (int i = 0; i < matrix.length; i++) {
+//            for (int j = 0; j < matrix[i].length; j++) {
+//                matrix[i][j] = random.nextInt(100);
+//            }
+//        }
+//        System.out.println("Сгенерированная матрица по задаче 7: ");
+//        for (int i = 0; i < matrix.length; i++, System.out.println()) {
+//            for (int j = 0; j < matrix[i].length; j++) {
+//                System.out.print(matrix[i][j] + " ");
+//            }
+//        }
+//        for (int i = 0; i < matrix.length; i++) {
+//            for (int j = 0; j < matrix[i].length; j++) {
+//                if ((matrix[i][j]) % 3 == 0) {
+//                    matrix[i][j] = Integer.parseInt("+");
+//                } else if ((matrix[i][j]) % 7 == 0) {
+//                    matrix[i][j] = Integer.parseInt("-");
+//                } else {
+//                    matrix[i][j] = Integer.parseInt("*");
+//                }
+//                System.out.print(matrix[i][j] + " ");
+//            }
+//        }
+//    }
+
+    /**
+     * Задача со звездочкой!
+     * Метод должен печатать все простые числа <1000
+     * что такое просто число (https://www.webmath.ru/poleznoe/formules_18_5.php)
+     */
+    public static int printPrimeNumbers(int limitForNumber) {
+        for (int i = 2; i <= limitForNumber; i++) {
+            Integer number = i;
+            for (int j = 2; j < i; j++) {
+                if (i % j == 0) {
+                    number = null;
+                    break;
+                }
+            }
+            if (number != null) {
+                System.out.println(number);
+            }
+        }
+        return limitForNumber;
     }
 }
-
 
 
 
