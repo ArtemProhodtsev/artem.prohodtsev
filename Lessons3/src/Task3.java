@@ -24,7 +24,9 @@ public class Task3 {
 
         calculateSumOfDiagonalElements(3);
 
-//        printMatrix(2, 3);
+        printMatrix(2, 3);
+        System.out.println();
+
         System.out.println("Задача 8: Вывод простых чисел");
         printPrimeNumbers(1000);
     }
@@ -180,33 +182,32 @@ public class Task3 {
      * <p>
      * Обратите внимание, что 21% 3 == 0 и 21% 7 = 0, но выводить надо не +-, а +
      */
-//    public static void printMatrix(int size1, int size2) {
-//        int[][] matrix = new int[size1][size2];
-//        Random random = new Random();
-//        for (int i = 0; i < matrix.length; i++) {
-//            for (int j = 0; j < matrix[i].length; j++) {
-//                matrix[i][j] = random.nextInt(100);
-//            }
-//        }
-//        System.out.println("Сгенерированная матрица по задаче 7: ");
-//        for (int i = 0; i < matrix.length; i++, System.out.println()) {
-//            for (int j = 0; j < matrix[i].length; j++) {
-//                System.out.print(matrix[i][j] + " ");
-//            }
-//        }
-//        for (int i = 0; i < matrix.length; i++) {
-//            for (int j = 0; j < matrix[i].length; j++) {
-//                if ((matrix[i][j]) % 3 == 0) {
-//                    matrix[i][j] = Integer.parseInt("+");
-//                } else if ((matrix[i][j]) % 7 == 0) {
-//                    matrix[i][j] = Integer.parseInt("-");
-//                } else {
-//                    matrix[i][j] = Integer.parseInt("*");
-//                }
-//                System.out.print(matrix[i][j] + " ");
-//            }
-//        }
-//    }
+    public static void printMatrix(int size1, int size2) {
+        int[][] matrix = new int[size1][size2];
+        Random random = new Random();
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                matrix[i][j] = random.nextInt(100);
+            }
+        }
+        System.out.println("Сгенерированная матрица по задаче 7: ");
+        for (int i = 0; i < matrix.length; i++, System.out.println()) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+        }
+        for (int i = 0; i < matrix.length; i++, System.out.println()) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if ((matrix[i][j]) % 3 == 0) {
+                    System.out.print("+" + " ");
+                } else if ((matrix[i][j]) % 7 == 0) {
+                    System.out.print("-" + " ");
+                } else {
+                    System.out.print("*" + " ");
+                }
+            }
+        }
+    }
 
     /**
      * Задача со звездочкой!
