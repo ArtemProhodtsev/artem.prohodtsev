@@ -1,20 +1,29 @@
 public class Task4 {
     public static void main(String[] args) {
-        System.out.println(summ(2, 9));
-        System.out.println(summ1(2, 9));
+        System.out.println(summa(2, 9));
+        System.out.println(summa1(2, 9));
         System.out.println(" ,колличество цифр = " + getCountsOfDigits(2));
+        progressionA(1);
     }
+
 
     //        Задачи:
 //         1) Одноклеточная амеба каждые 3 часа делится на 2 клетки. Определить,
 //   сколько амеб будет через 3, 6, 9, 12,..., 24 часа
-//        2) Напишите реализацию метода summ(int a, int b), вычисляющий a*b, не пользуясь операцией
+    private static void progressionA(int ameba) {
+        for (int i = 0; i < 24; i += 3) {
+            ameba = ameba * 2;
+            System.out.println(ameba);
+        }
+    }
+
+    //        2) Напишите реализацию метода summ(int a, int b), вычисляющий a*b, не пользуясь операцией
 //        умножения, где a и b целые числа, вызовите метод summ  в методе main и распечатайте на консоль.
-    public static double summ(int a, int b) {
+    public static double summa(int a, int b) {
         return Math.pow(10, (Math.log10(a) + Math.log10(b)));
     }
 
-    public static double summ1(double a, double b) {
+    public static double summa1(double a, double b) {
         return 0 == b ? 0 : a / (1 / b);
     }
 
@@ -46,6 +55,7 @@ public class Task4 {
         }
         return String.valueOf(Math.abs(number)).length();
     }
+}
 //    public static int getCountsOfDigits(long number) {
 //        int count = (number == 0) ? 1 : 0;
 //        while (number != 0) {
@@ -54,7 +64,6 @@ public class Task4 {
 //        }
 //        return count;
 //    }
-}
 
 //        5) Создайте массив из всех нечётных чисел от 1 до 100, выведите его на экран в строку,
 //        а затем этот же массив выведите на экран тоже в строку, но в обратном порядке (99 97 95 93 ... 7 5 3 1).
