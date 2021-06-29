@@ -1,3 +1,7 @@
+import java.util.Arrays;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 public class Task4 {
     public static void main(String[] args) {
         //Завдача 2
@@ -14,7 +18,9 @@ public class Task4 {
         //Задача 7
         massZero();
         //Задача 8
-        findMaxElementAndReplace(new int[]{4, 5, 0, 23, 77, 0, 8, 9, 101, 2});
+//        findMaxElementAndReplace(new int[]{4, 5, 0, 23, 77, 0, 8, 9, 101, 2});
+        //Задача 9
+        massDifference();
     }
 
 
@@ -136,26 +142,52 @@ public class Task4 {
             }
             System.out.print(mass[i] + " ");
         }
+        System.out.println(" ");
     }
 
     //        8) Найти максимальный элемент в массиве {4,5,0,23,77,0,8,9,101,2} и поменять его местами с нулевым элементом
-    public static void findMaxElementAndReplace(int[] array) {
-        System.out.println("Решение задачи 8");
-        int max = 0;
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] > max) {
-                max = array[i];
-
-            }
-            System.out.print(array[i] + " ");
-        }
-    }
-}
+//    public static void findMaxElementAndReplace(int[] array) {
+//        System.out.println("Решение задачи 8");
+//        int max = 0;
+//        for (int i = 0; i < array.length; i++) {
+//            if (array[i] > max) {
+//                max = array[i];
+//            }
+//            System.out.print(array[i] + " ");
+//        }
+//        System.out.println(" ");
+//    }
 //        9) Проверить, различны ли все элементы массива, если не различны то вывести элемент повторяющийся
 //        Пример: {0,3,46,3,2,1,2}
 //        Массив имеет повторяющиеся элементы 3, 2
 //        Пример: {0,34,46,31,20,1,28}
 //        Массив не имеет повторяющихся элементов
+    public static void massDifference() {
+        System.out.println("Решение задачи 9");
+        int[] arr1 = {123, 2, 12, 4, 3, 6, 8, 5, 8};
+        int[] arr2 = {356, 5, 7, 1, 3, 8, 2, 2, 9, 10, 12};
+        // объединили два массива в один
+        int[] arr3 = Stream.of(arr1, arr2)
+                // выкидываем distinct() из каждого массива поворяющиеся элементы и объединяем в один Stream<Integer>
+                // flatMap() используют для объединения или объединения нескольких потоков в один поток.
+                .flatMap(arr -> Arrays.stream(arr).distinct().boxed())
+                // группируем в карту по количеству вхождений
+                .collect(Collectors.groupingBy(i -> i, Collectors.counting()))
+                // обходим карту
+                .entrySet().stream()
+                // количество больше одного
+                .filter(e -> e.getValue() > 1)
+                // получаем сами элементы
+                .map(e -> e.getKey())
+                // получаем 'int' значения элементов
+                .mapToInt(Integer::intValue)
+                // собираем в массив
+                .toArray();
+        // выводим массив повторяющихся элементов
+        System.out.println(Arrays.toString(arr3));
+    }
+}
+
 
 //        10) Создаём квадратную матрицу, размер вводим с клавиатуры.
 //        Заполняем случайными числами в диапазоне от 0 до 50. И выводим на консоль(в виде матрицы).
