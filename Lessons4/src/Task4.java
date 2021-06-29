@@ -1,10 +1,12 @@
 import java.util.Arrays;
+import java.util.Random;
+import java.util.Scanner;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Task4 {
     public static void main(String[] args) {
-        //Завдача 2
+        //Задача 2
         System.out.println(summa(2, 9));
         System.out.println(summa1(2, 9));
         //Задача 4
@@ -18,9 +20,13 @@ public class Task4 {
         //Задача 7
         massZero();
         //Задача 8
-//        findMaxElementAndReplace(new int[]{4, 5, 0, 23, 77, 0, 8, 9, 101, 2});
+        for (int i : findMaxElementAndReplace(new int[]{4, 5, 0, 23, 77, 0, 8, 9, 101, 2}))
+            System.out.print(i + " ");
+        System.out.println(" ");
         //Задача 9
         massDifference();
+        //Задача 10
+        matrixTransp();
     }
 
 
@@ -146,18 +152,25 @@ public class Task4 {
     }
 
     //        8) Найти максимальный элемент в массиве {4,5,0,23,77,0,8,9,101,2} и поменять его местами с нулевым элементом
-//    public static void findMaxElementAndReplace(int[] array) {
-//        System.out.println("Решение задачи 8");
-//        int max = 0;
-//        for (int i = 0; i < array.length; i++) {
-//            if (array[i] > max) {
-//                max = array[i];
-//            }
-//            System.out.print(array[i] + " ");
-//        }
-//        System.out.println(" ");
-//    }
-//        9) Проверить, различны ли все элементы массива, если не различны то вывести элемент повторяющийся
+
+    public static int[] findMaxElementAndReplace(int[] array) {
+        System.out.println("Решение задачи 8");
+        int replaseIndex = 0, maxIndex = 0;
+        for (int i = 1; i < array.length; ++i) {
+            if (array[i] > array[maxIndex])
+                maxIndex = i;
+        }
+        int t;
+        if (maxIndex != replaseIndex) {
+            t = array[replaseIndex];
+            array[replaseIndex] = array[maxIndex];
+            array[maxIndex] = t;
+        }
+        return array;
+    }
+
+
+    //        9) Проверить, различны ли все элементы массива, если не различны то вывести элемент повторяющийся
 //        Пример: {0,3,46,3,2,1,2}
 //        Массив имеет повторяющиеся элементы 3, 2
 //        Пример: {0,34,46,31,20,1,28}
@@ -186,10 +199,9 @@ public class Task4 {
         // выводим массив повторяющихся элементов
         System.out.println(Arrays.toString(arr3));
     }
-}
 
 
-//        10) Создаём квадратную матрицу, размер вводим с клавиатуры.
+    //        10) Создаём квадратную матрицу, размер вводим с клавиатуры.
 //        Заполняем случайными числами в диапазоне от 0 до 50. И выводим на консоль(в виде матрицы).
 //        Далее необходимо транспонировать матрицу(1 столбец станет 1-й строкой, 2-й столбец - 2-й строкой и т. д.)
 //        Пример:
@@ -197,4 +209,43 @@ public class Task4 {
 //          6 7 8 9      2 7 3 5
 //          3 3 4 5      3 8 4 6
 //          1 5 6 7      4 9 5 7
+    public static void matrixTransp() {
+        System.out.println("Решение задачи 10");
+        Scanner keyboard = new Scanner(System.in);
+        System.out.print("Введите  размер стороны квадрата матрицы: ");
+        int size = keyboard.nextInt();
+        int[][] matrix = new int[size][size];
+        Random random = new Random();
+        //заполним матрицу рандомными значениями
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                matrix[i][j] = (int) (0 + Math.random() * 50);
+            }
+        }
+        //выведем матрицу в консоль
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++)
+                System.out.print(matrix[i][j] + " ");
+            System.out.println();
+        }
+        //магия транспонирования
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = i + 1; j < matrix.length; j++) {
+                int temp = matrix[i][j];
+                matrix[i][j] = matrix[j][i];
+                matrix[j][i] = temp;
+            }
+        }
+        //выводим транспонированную матрицу
+        System.out.println();
+        System.out.println("Транспонированная матрица:");
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix.length; j++) {
+                System.out.printf("%5d", matrix[i][j]);
+            }
+            System.out.println();
+        }
+    }
+}
+
 
