@@ -27,6 +27,8 @@ public class Task4 {
         massDifference();
         //Задача 10
         matrixTransp();
+        //Задача 3
+        paintMatrix();
     }
 
 
@@ -55,7 +57,7 @@ public class Task4 {
 
 //        3) Дан двухмерный массив размерностью 4 на 4, необходимо нарисовать четыре треугольника вида
 
-//        a)                  b)
+    //        a)                  b)
 //              *        *
 //            * *        * *
 //          * * *        * * *
@@ -66,6 +68,26 @@ public class Task4 {
 //          * * *        * * *
 //            * *        * *
 //              *        *
+    public static void paintMatrix() {
+        System.out.print("Введите размер матрицы: ");
+        Scanner key = new Scanner(System.in);
+        int n = key.nextInt();
+        for (int i = 0; i <= n; i++) {
+            for (int j = 0; j < n - i; j++) {
+                System.out.print("  ");
+            }
+            for (int j = i; j > 0; j--) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+        for (int i = 0; i <= n; i++) {
+            for (int j = i; j > 0; j--) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
 
     //        4)В переменную записываем число.
 //        Надо вывести на экран сколько в этом числе цифр и положительное оно или отрицательное.
