@@ -7,10 +7,9 @@ import java.util.stream.Stream;
 public class Task4 {
     public static void main(String[] args) {
         //Задача 2
-        System.out.println(summa(2, 9));
-        System.out.println(summa1(2, 9));
+        System.out.println(summ(-10, 0));
         //Задача 4
-        System.out.println(" ,колличество цифр = " + getCountsOfDigits(23459));
+        System.out.println(getCountsOfDigits(23459));
         //Задача 1
         progressionA(1);
         //Задача 5
@@ -45,14 +44,12 @@ public class Task4 {
 
     //        2) Напишите реализацию метода summ(int a, int b), вычисляющий a*b, не пользуясь операцией
 //        умножения, где a и b целые числа, вызовите метод summ  в методе main и распечатайте на консоль.
-    public static double summa(int a, int b) {
-        System.out.println("Решение задачи 2");
-        return Math.pow(10, (Math.log10(a) + Math.log10(b)));
-    }
-
-    public static double summa1(double a, double b) {
-        System.out.println("Решение задачи 2");
-        return 0 == b ? 0 : a / (1 / b);
+    public static int summ(int a, int b) {
+        int result = 0;
+        for (int i = 0; i < a; i++) {
+            result += b;
+        }
+        return result;
     }
 
 //        3) Дан двухмерный массив размерностью 4 на 4, необходимо нарисовать четыре треугольника вида
@@ -116,20 +113,12 @@ public class Task4 {
         if (number == 0) {
             System.out.print(number + " - ноль");
         } else if (number > 0) {
-            System.out.print(number + " - это положительное число");
+            System.out.print(number + " - это положительное число, количество цифр = " + String.valueOf(Math.abs(number)).length());
         } else {
-            System.out.print(number + " - это отрицательное число");
+            System.out.print(number + " - это отрицательное число, количество цифр = " + String.valueOf(Math.abs(number)).length());
         }
-        return String.valueOf(Math.abs(number)).length();
+        return (int) number;
     }
-//    public static int getCountsOfDigits(long number) {
-//        int count = (number == 0) ? 1 : 0;
-//        while (number != 0) {
-//            count++;
-//            number /= 10;
-//        }
-//        return count;
-//    }
 
     //        5) Создайте массив из всех нечётных чисел от 1 до 100, выведите его на экран в строку,
 //        а затем этот же массив выведите на экран тоже в строку, но в обратном порядке (99 97 95 93 ... 7 5 3 1).
@@ -144,13 +133,13 @@ public class Task4 {
         for (int i = mas.length - 1; i >= 0; i--) {
             System.out.print(mas[i] + " ");
         }
-        System.out.println();
     }
 
     //        6) Создайте массив из int[] mass = new int[12]; Рандомно заполните его значениями от 0 до 15.
 //        Определите какой элемент является в этом массиве максимальным и сообщите индекс его последнего вхождения в массив.
 //        Пример: {3,4,5,62,7,8,4,-5,7,62,5,1} Максимальный элемент 62, индекс его последнего вхождения в массив = 10
     public static void maxIndex() {
+        System.out.println("");
         System.out.println("Решение задачи 6");
         int[] mass = new int[12];
         int max = 0, j = 0;
@@ -165,7 +154,7 @@ public class Task4 {
             }
         }
         System.out.println("");
-        System.out.println("Максимальный элемент " + mass[j] + " ,индекс его последнего вхождения в массив= " + j);
+        System.out.println("Максимальный элемент " + max + " ,индекс его последнего вхождения в массив= " + j);
     }
 
 
@@ -174,7 +163,7 @@ public class Task4 {
 //        Снова выведете массив на экран на отдельной строке.
     public static void massZero() {
         System.out.println("Решение задачи 7");
-        int[] mass = new int[8];
+        int[] mass = new int[20];
         for (int i = 0; i < mass.length; i++) {
             mass[i] = (int) (0 + Math.random() * 20);
         }
@@ -195,14 +184,14 @@ public class Task4 {
 
     public static int[] findMaxElementAndReplace(int[] array) {
         System.out.println("Решение задачи 8");
-        int replaseIndex = 0, maxIndex = 0;
+        int maxIndex = 0;
         for (int i = 1; i < array.length; ++i) {
             if (array[i] > array[maxIndex])
                 maxIndex = i;
         }
-        int t;
+        int replaseIndex = 0;
         if (maxIndex != replaseIndex) {
-            t = array[replaseIndex];
+            int t = array[replaseIndex];
             array[replaseIndex] = array[maxIndex];
             array[maxIndex] = t;
         }
