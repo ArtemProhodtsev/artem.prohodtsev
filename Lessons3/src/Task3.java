@@ -46,11 +46,10 @@ public class Task3 {
         for (int i = 0; i < myArray.length; i++) {
             myArray[i] = random.nextInt();
         }
-        System.out.print("\nЗадача 1: Вывод элементов массива myArray: ");
+        System.out.println("\nЗадача 1: Вывод элементов массива myArray: ");
         for (int i = 0; i < myArray.length; i++) {
-            System.out.print(myArray[i] + ", ");
+            System.out.print(myArray[i] + " ");
         }
-
     }
 
     /**
@@ -63,9 +62,9 @@ public class Task3 {
 
     private static int operation(int number) {
         if (number > 0) {
-            number = number - 2;
-        } else if (number < 0) {
             number = number + 1;
+        } else if (number < 0) {
+            number = number - 2;
         } else {
             number = 10;
         }
@@ -101,11 +100,13 @@ public class Task3 {
         int с10 = count % 10;
         int c100 = count % 100;
         String word = "";
-        if (с10 == 1) {
-            word = "Программист";
-        } else if ((с10 >= 2) && (с10 <= 4)) {
+        if (c100 >= 11 && c100 <= 19) {
+            word = "Программистов";
+        } else if (с10 >= 2 && с10 <= 4) {
             word = "Программиста";
-        } else if (((с10 == 0) || (с10 >= 5) && (с10 <= 9)) || (c100 >= 11) && (c100 < 14)) {
+        } else if (с10 == 1) {
+            word = "Программист";
+        } else {
             word = "Программистов";
         }
         System.out.printf("%d %s", count, word);
@@ -157,7 +158,7 @@ public class Task3 {
             }
         }
         System.out.println("Сумма элементов по диагонали матрицы по задаче 6 = " + summa);
-        return rows;
+        return summa;
     }
 
     /**
@@ -199,11 +200,11 @@ public class Task3 {
         for (int i = 0; i < matrix.length; i++, System.out.println()) {
             for (int j = 0; j < matrix[i].length; j++) {
                 if ((matrix[i][j]) % 3 == 0) {
-                    System.out.print("+" + " ");
+                    System.out.print("+ ");
                 } else if ((matrix[i][j]) % 7 == 0) {
-                    System.out.print("-" + " ");
+                    System.out.print("- ");
                 } else {
-                    System.out.print("*" + " ");
+                    System.out.print("* ");
                 }
             }
         }
