@@ -72,6 +72,7 @@ public class Task4 {
         System.out.print("Введите размер матрицы: ");
         Scanner key = new Scanner(System.in);
         int n = key.nextInt();
+        //1 треугольник
         for (int i = 0; i <= n; i++) {
             for (int j = 0; j < n - i; j++) {
                 System.out.print("  ");
@@ -81,9 +82,26 @@ public class Task4 {
             }
             System.out.println();
         }
+        //2 треугольник
         for (int i = 0; i <= n; i++) {
             for (int j = i; j > 0; j--) {
                 System.out.print("* ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+        //3 треугольник
+        for (int i = n; i >= 1; i--) {
+            if (i != n) {
+                for (int k = 1; k <= 0; k++) {
+                    System.out.print(" ");
+                }
+            }
+            for (int j = i; j >= 1; j--) {
+                System.out.print("*");
+                if (i != 1) {
+                    System.out.print(" ");
+                }
             }
             System.out.println();
         }
