@@ -7,7 +7,8 @@ import java.util.stream.Stream;
 public class Task4 {
     public static void main(String[] args) {
         //Задача 2
-        System.out.println(summ(-10, 0));
+        System.out.println(summ(-6, 4));
+        System.out.println(summ1(-6, -5));
         //Задача 4
         System.out.println(getCountsOfDigits(23459));
         //Задача 1
@@ -44,12 +45,41 @@ public class Task4 {
 
     //        2) Напишите реализацию метода summ(int a, int b), вычисляющий a*b, не пользуясь операцией
 //        умножения, где a и b целые числа, вызовите метод summ  в методе main и распечатайте на консоль.
+    //первый способ
     public static int summ(int a, int b) {
-        int result = 0;
-        for (int i = 0; i < a; i++) {
-            result += b;
+        int result = a;
+        if (a == 0 || b == 0) {
+            result = 0;
+        } else {
+            for (int i = 1; i < Math.abs(b); i++) {
+                result += a;
+            }
+
+            if (a > 0 ^ b > 0) {
+                result = -Math.abs(result);
+            } else {
+                result = Math.abs(result);
+            }
+
         }
         return result;
+    }
+
+    //второй способ - рекурсия
+    public static int summ1(int a, int b) {
+        if (a == 0 || b == 0)
+            return 0;
+        if (a == 1)
+            return b;
+        if (b == 1)
+            return a;
+        if (a < 0 && b < 0)
+            return summ1(a * -1, b * -1);
+        if (a < 0)
+            return -1 * summ1(a * -1, b);
+        if (b < 0)
+            return -1 * summ1(a, b * -1);
+        return a + summ1(a, b - 1);
     }
 
 //        3) Дан двухмерный массив размерностью 4 на 4, необходимо нарисовать четыре треугольника вида
@@ -99,6 +129,16 @@ public class Task4 {
                 if (i != 1) {
                     System.out.print(" ");
                 }
+            }
+            System.out.println();
+        }
+        //4 треугольник
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < i; j++) {
+                System.out.print(" ");
+            }
+            for (int j = i; j < n; j++) {
+                System.out.print("*");
             }
             System.out.println();
         }
