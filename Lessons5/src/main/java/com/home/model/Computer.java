@@ -20,6 +20,10 @@ public class Computer {
     //добавим методы: описание(вывод всех полей), включить, выключить, при превышении лимита ресурса комп сгорает.
 
     //метод описания (выводит все поля)
+    public void info() {
+        System.out.println(this);
+    }
+
     @Override
     public String toString() {
         return "Компьютер: " +
