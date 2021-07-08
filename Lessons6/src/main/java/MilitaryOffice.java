@@ -16,7 +16,7 @@ public class MilitaryOffice {
         Address aleksandrAddress = new Address("Belarus", "Minsk");
         Person aleksandr = new Person("Александр", 17, "MALE", aleksandrAddress);
 
-
+//
         //создали массив куда поместили наших призывников
         PersonRegistry registry = new PersonRegistry(new Person[]{gleb, konstantin, artem, pavel, aleksandr});
         //a) вывести имена всех людей годных к военной службе на текущий момент времени, которые есть в PersonRegistry
