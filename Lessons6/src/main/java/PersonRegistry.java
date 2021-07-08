@@ -46,7 +46,7 @@ public class PersonRegistry {
 
     //данный метод возвращает имена призывников подпадающих под призыв по возрасту и полу
     public void countPeopleCount() {
-        System.out.println("Имена призовников подпадающих под призыв: ");
+        System.out.println("Имена всех людей годных к военной службе на текущий момент времени: ");
         for (Person person : conscript) {
             int personAge = person.getAge();
             String personSex = person.getSex();
