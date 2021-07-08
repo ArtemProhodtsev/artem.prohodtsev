@@ -16,13 +16,13 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>Lesson1</module>
-        <module>Lesson2</module>
-        <module>Lesson3</module>
-        <module>Lesson4</module>
-        <module>Lesson5</module>
-        <module>Lesson6</module>
-        <module>Lesson7</module>
+        <module>Lessons1</module>
+        <module>Lessons2</module>
+        <module>Lessons3</module>
+        <module>Lessons4</module>
+        <module>Lessons5</module>
+        <module>Lessons6</module>
+        <module>Lessons7</module>
     </modules>
 
     <dependencies>
