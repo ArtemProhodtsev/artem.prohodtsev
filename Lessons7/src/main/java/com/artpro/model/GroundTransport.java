@@ -18,6 +18,7 @@ public class GroundTransport extends Transport {
     private Integer fuelСonsumption; //объявили поле расход топлива
 
     //сгенерировали конструктор
+
     public GroundTransport(Integer power, Integer maxSpeed, Integer weight, String brand, Integer numberOfWheels, Integer fuelСonsumption) {
         super(power, maxSpeed, weight, brand);
         this.numberOfWheels = numberOfWheels;

@@ -20,6 +20,7 @@ public class Transport {
     private String brand; //объявили поле марки
 
     //сгенерировали конструктор
+
     public Transport(Integer power, Integer maxSpeed, Integer weight, String brand) {
         this.power = power;
         this.maxSpeed = maxSpeed;

@@ -13,10 +13,10 @@ public class CivilTransport extends AirTransport {
     private boolean businessСlass; //бизнес класс
 
     //сгенерировали конструктор
-    public CivilTransport(Integer power, Integer maxSpeed, Integer weight, String brand, Integer wingspan, Integer minRunwayLength, Integer numberOfPassengers, boolean businessСlass) {
-        super(power, maxSpeed, weight, brand, wingspan, minRunwayLength);
+
+    public CivilTransport(Integer power, Integer maxSpeed, Integer weight, String brand, Integer numberOfPassengers, boolean businessСlass) {
+        super(power, maxSpeed, weight, brand);
         this.numberOfPassengers = numberOfPassengers;
         this.businessСlass = businessСlass;
     }
-
 }

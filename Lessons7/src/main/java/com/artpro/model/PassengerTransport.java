@@ -19,6 +19,7 @@ public class PassengerTransport extends GroundTransport {
 //    параметр мощность в киловаттах (кВ) .
 
     //сгенерировали конструктор
+
     public PassengerTransport(Integer power, Integer maxSpeed, Integer weight, String brand, Integer numberOfWheels, Integer fuelСonsumption, Integer bodyType, int numberOfPassengers) {
         super(power, maxSpeed, weight, brand, numberOfWheels, fuelСonsumption);
         this.bodyType = bodyType;

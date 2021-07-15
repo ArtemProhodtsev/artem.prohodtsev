@@ -13,6 +13,7 @@ public class СargoTransport extends GroundTransport {
     private Integer loadCapacity; //объявили поле грузоподъёмность
 
     //сгенерировали конструктор
+
     public СargoTransport(Integer power, Integer maxSpeed, Integer weight, String brand, Integer numberOfWheels, Integer fuelСonsumption, Integer loadCapacity) {
         super(power, maxSpeed, weight, brand, numberOfWheels, fuelСonsumption);
         this.loadCapacity = loadCapacity;

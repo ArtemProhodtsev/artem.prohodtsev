@@ -13,8 +13,9 @@ public class MilitaryTransport extends AirTransport {
     private Integer numberOfMissilesOnBoard; //кол-во ракет на борту
 
     //сгенерировали конструктор
-    public MilitaryTransport(Integer power, Integer maxSpeed, Integer weight, String brand, Integer wingspan, Integer minRunwayLength, boolean ejectionSystem, Integer numberOfMissilesOnBoard) {
-        super(power, maxSpeed, weight, brand, wingspan, minRunwayLength);
+
+    public MilitaryTransport(Integer power, Integer maxSpeed, Integer weight, String brand, boolean ejectionSystem, Integer numberOfMissilesOnBoard) {
+        super(power, maxSpeed, weight, brand);
         this.ejectionSystem = ejectionSystem;
         this.numberOfMissilesOnBoard = numberOfMissilesOnBoard;
     }

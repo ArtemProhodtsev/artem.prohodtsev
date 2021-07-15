@@ -14,10 +14,8 @@ public class AirTransport extends Transport {
     private Integer minRunwayLength; //длина взлётно-посадочной
 
     //сгенерировали конструктор
-    public AirTransport(Integer power, Integer maxSpeed, Integer weight, String brand, Integer wingspan, Integer minRunwayLength) {
+    public AirTransport(Integer power, Integer maxSpeed, Integer weight, String brand) {
         super(power, maxSpeed, weight, brand);
-        this.wingspan = wingspan;
-        this.minRunwayLength = minRunwayLength;
     }
 
 }
