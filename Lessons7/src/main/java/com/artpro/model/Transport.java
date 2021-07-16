@@ -18,7 +18,7 @@ public class Transport {
 //- Марка( например: Audi, BMW , Boing, Airbus, Scania , МАЗ и т.д. )
 
     //Добавляем необходимые поля
-    private Integer power; //объявили поле можность
+    private Integer power; //объявили поле мощность
     private Integer maxSpeed; //объявили поле максимальной скорости
     private Integer weight; //объявили поле массы
     private String brand; //объявили поле марки
