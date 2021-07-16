@@ -11,10 +11,10 @@ import static com.artpro.utils.Support.conversionOfPowerTokW;
 @Getter
 @SuperBuilder
 
-public class СargoTransport extends GroundTransport {
+public class CargoTransport extends GroundTransport {
     //В классе Грузовой добавляется  поле:
 //- Грузоподъёмность(т)
-    private Integer loadCapacity; //объявили поле грузоподъёмность
+    private double loadCapacity; //объявили поле грузоподъёмность
 
     //создали метод toString для получения представления нашего объекта в виде строки
     //поля добавляем из класса GroundTransport + Transport: numberOfWheels, fuelСonsumption, power, maxSpeed, weight, brand
