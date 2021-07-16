@@ -22,7 +22,6 @@
         <module>Lessons4</module>
         <module>Lessons5</module>
         <module>Lessons6</module>
-        <module>Lessons7</module>
     </modules>
 
     <dependencies>
