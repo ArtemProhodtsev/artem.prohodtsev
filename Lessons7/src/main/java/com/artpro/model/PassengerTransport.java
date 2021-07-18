@@ -32,7 +32,7 @@ public class PassengerTransport extends GroundTransport {
                 "numberOfWheels" + getNumberOfWheels() + "шт, " + //через get() достукиваемся до поле в другом классе
                 "fuelСonsumption" + getFuelСonsumption() + "литров/100км, " +
                 "horsepower" + getPower() + "лошадиных сил " +
-                "powerKW=" + conversionOfPowerTokW((int) getPower()) + " кВ), " + //используем метод конвертирования мощности, getPower() - подставляемый параметр
+                "powerKW=" + conversionOfPowerTokW(getPower()) + " кВ), " + //используем метод конвертирования мощности, getPower() - подставляемый параметр
                 "maxSpeed" + getPower() + "км/ч, " +
                 "weight" + getWeight() + "кг, " +
                 "brand" + getBrand() + ", " +
