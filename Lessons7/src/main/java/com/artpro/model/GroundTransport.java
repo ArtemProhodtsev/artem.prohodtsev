@@ -15,8 +15,8 @@ public class GroundTransport extends Transport {
 //-Количество колёс
 //-Расход топлива(л/100км)
 
-    private Integer numberOfWheels; //объявили поле количество колёс
-    private Integer fuelСonsumption; //объявили поле расход топлива
+    private double numberOfWheels; //объявили поле количество колёс
+    private double fuelСonsumption; //объявили поле расход топлива
 
 
 }

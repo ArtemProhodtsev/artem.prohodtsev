@@ -11,7 +11,7 @@ import com.artpro.model.CargoTransport;
 public class CargoTransportService {
     public void calculationCargoTransportService(CargoTransport cargoTransport, double cargo) {
 
-        if (cargo == cargoTransport.getLoadCapacity() && cargo < cargoTransport.getLoadCapacity()) {
+        if (cargo <= cargoTransport.getLoadCapacity()) {
             System.out.println("Грузовик загружен");
         } else {
             System.out.println("Вам нужен грузовик побольше");

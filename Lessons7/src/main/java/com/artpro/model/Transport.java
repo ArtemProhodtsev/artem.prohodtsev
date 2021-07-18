@@ -8,7 +8,6 @@ import lombok.experimental.SuperBuilder;
 @Getter
 @Setter
 @SuperBuilder
-
 //в пакете моделей создали класс Транспорт
 public class Transport {
     //В классе Транспорт есть поля:
@@ -18,9 +17,9 @@ public class Transport {
 //- Марка( например: Audi, BMW , Boing, Airbus, Scania , МАЗ и т.д. )
 
     //Добавляем необходимые поля
-    private Integer power; //объявили поле мощность
-    private Integer maxSpeed; //объявили поле максимальной скорости
-    private Integer weight; //объявили поле массы
+    private double power; //объявили поле мощность
+    private double maxSpeed; //объявили поле максимальной скорости
+    private double weight; //объявили поле массы
     private String brand; //объявили поле марки
 
 }

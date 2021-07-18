@@ -19,9 +19,9 @@ public class Main {
 //       теперь объект passengerTransportService обладает всеми методами в классе PassengerTransportService
 // простучимся к методу calculationPassengerTransport передав параметры метода и сначала написал вот так:
 //        passengerTransportService.calculationPassengerTransport(Opel, 10);
-        //но Opel ещё не был создан и по этому воспользовался специальным builder()
-        GroundTransport Opel = GroundTransport.builder().brand("Opel").fuelСonsumption(10).maxSpeed(220).build();
-        passengerTransportService.calculationPassengerTransport(Opel, 2.5);
+        //но opel ещё не был создан и по этому воспользовался специальным builder()
+        GroundTransport opel = GroundTransport.builder().brand("Opel").fuelСonsumption(10).maxSpeed(220).build();
+        passengerTransportService.calculationPassengerTransport(opel, 2.5);
 
         //выводим в консоль метод из CargoTransportService
 
@@ -48,7 +48,7 @@ public class Main {
         militaryTransportService.calculationRocketsMilitaryTransportService(il3);
 
         //добавляем метод calculationСatapultMilitaryTransportService
-        MilitaryTransport.MilitaryTransportBuilder<?, ?> il4 = MilitaryTransport.builder().numberOfMissilesOnBoard(10).ejectionSystem(true); //есть катапульта в объекте il4
+        MilitaryTransport.MilitaryTransportBuilder<?, ?> il4 = MilitaryTransport.builder().numberOfMissilesOnBoard(3).ejectionSystem(true); //есть катапульта в объекте il4
         MilitaryTransport.MilitaryTransportBuilder<?, ?> il5 = MilitaryTransport.builder().numberOfMissilesOnBoard(10).ejectionSystem(false); //нет катупульты в объекте il5
         militaryTransportService.calculationСatapultMilitaryTransportService(il4.build());
         militaryTransportService.calculationСatapultMilitaryTransportService(il5.build());
