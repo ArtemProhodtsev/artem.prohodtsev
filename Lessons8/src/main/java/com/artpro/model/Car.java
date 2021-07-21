@@ -11,7 +11,7 @@ import lombok.ToString;
 public class Car {
     //добавляем поля присущие классу Машина
     private Motor motor; //мотор
-    private GasTank gasTank; //двигатель
+    private GasTank gasTank; //топливный бак
 
     //сгенерируем конструктор на основе полей motor и gasTank
 
