@@ -4,12 +4,12 @@ import com.artpro.model.Car;
 
 //1.1. имплементировали метод distanceCarPassedForAllTime из CarService
 public class CarServiceImplements implements CarService {
-    private Car car; //не понимаю что сделали
+    private final Car car; //не понимаю что сделали
 
+    //сгенерировали конструктор для объекта car
     public CarServiceImplements(Car car) {
         this.car = car;
     }
-
 
     @Override
     public void distanceCarPassedForAllTime() {
