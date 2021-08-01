@@ -11,10 +11,10 @@ import lombok.ToString;
 public class GasTank {
     //добавляем поля присущие бензобаку
     //по задаче это: общий объем бензобака, сколько бензина сейчас
-    private int volumeGasTank; //объём бензобака
+    private final int volumeGasTank; //объём бензобака, он будет final так как изменяться не будет
     private int levelGasTank; //уровень бензина
-//сгенерируем конструктор на основе пока что поля volumeGasTank
 
+    //создали констуктор
     public GasTank(int volumeGasTank) {
         this.volumeGasTank = volumeGasTank;
     }
