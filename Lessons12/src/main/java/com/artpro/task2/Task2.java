@@ -9,7 +9,12 @@ public class Task2 {
     public static void main(String[] args) {
         List<String[]> listForBrute = List.of(
                 new String[]{"login", "psw", "confPsw"},
-                new String[]{"", "", ""}
+                new String[]{"login", "psw11111111111111111111111", "psw11111111111111111111111"},
+                new String[]{"login1", "psw1", "psw1"},
+                new String[]{"йцу", "йцуй", "йцуйцу1"},
+                new String[]{"login1@", "psw1@", "confPsw@"},
+                new String[]{"login1@11111111", "psw1@111111111111111", "confPsw@11111111111111111"},
+                new String[]{"_abc", "aaa", "aaa"}
                 //тут у нас будут кейсы
         );
         AuthService service = new AuthServiceImpl();
