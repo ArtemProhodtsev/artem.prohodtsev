@@ -1,6 +1,6 @@
 package com.artpro.task1.model;
 
-import com.artpro.task1.exceptions.CarExc;
+import com.artpro.task1.exceptions.CarException;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -22,7 +22,7 @@ public class Car {
         this.model = model;
     }
 
-    public void start() throws CarExc {
+    public void start() throws CarException {
         Random random = new Random();
 //        В методе старт генерируете случайное число от 0 до 20, если полученное число оказалось четным,
 //        то выбрасываете созданное ранее вами исключение и передаете его к месту откуда вызывали метод старт.
@@ -30,7 +30,7 @@ public class Car {
         int number = random.nextInt(21);
         System.out.println(number);
         if (number % 2 == 0) { //если чётное
-            throw new CarExc("Автомобиль марки " + getModel() + " не завёлся");
+            throw new CarException("Автомобиль марки " + getModel() + " не завёлся");
         } else {
             System.out.println("Автомобиль марки " + getModel() + " завёлся");
         }

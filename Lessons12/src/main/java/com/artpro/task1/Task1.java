@@ -1,6 +1,6 @@
 package com.artpro.task1;
 
-import com.artpro.task1.exceptions.CarExc;
+import com.artpro.task1.exceptions.CarException;
 import com.artpro.task1.model.Car;
 
 public class Task1 {
@@ -14,7 +14,7 @@ public class Task1 {
         for (Car car : cars) {
             try {
                 car.start();
-            } catch (CarExc exceptionCar) {
+            } catch (CarException exceptionCar) {
                 System.out.println(exceptionCar.getMessage());
             } finally {
                 System.out.println("Проверка связанная с чётностью сгенерированного числа по условию задачи завершена\n");
