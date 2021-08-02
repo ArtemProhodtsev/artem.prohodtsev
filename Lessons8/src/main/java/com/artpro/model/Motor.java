@@ -10,6 +10,7 @@ import lombok.ToString;
 @ToString
 public class Motor {
     private String typeMotor; //тип двигателя
+    private boolean isRunning; //запущен/не запущен
 
     public Motor(String typeMotor) {
         this.typeMotor = typeMotor;
