@@ -25,6 +25,7 @@ public class Main {
         System.out.println(task1("мАрка, Варка"));
         System.out.println(task2("ночь"));
         task3("ночь, заказ, казак, дед");
+        task4("Люди не летают как птицы потому что отростили большие ягодицы." + "Мноооооого букоооооов." + "оаоаоаоао блум.");
     }
 
     private static String task1(String text) {
@@ -42,6 +43,16 @@ public class Main {
         for (String word : words) {
             if (word.equals(reverse(word)) && word.length() > 1) {
                 System.out.println(word);
+            }
+        }
+    }
+
+    private static void task4(String text) {
+        String[] sentences = text.split("\\.");
+        for (String sentence : sentences) {
+            int count = textFormatter.Count(sentence);
+            if ((count >= 3 && count <= 5) || textFormatter.Palindrome(sentence)) {
+                System.out.println(sentence);
             }
         }
     }
