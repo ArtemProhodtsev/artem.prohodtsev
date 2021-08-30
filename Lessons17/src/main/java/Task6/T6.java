@@ -53,7 +53,7 @@ public class T6 {
         MessageService messageService = new MessageServiceImpl();
 
         List<Book> booksList = List.of(
-                new Book(1, "Пушкин Александра Сергеевича", "Дубровский", 1842),
+                new Book(1, "Пушкин Александр Сергеевич", "Дубровский", 1842),
                 new Book(2, "Куприн Александр Иванович", "Над землёй", 1909),
                 new Book(3, "Чехов Антон Павлович", "Студент", 1894),
                 new Book(4, "Есенин Сергей Александрович", "Поэтам Грузии", 1924),

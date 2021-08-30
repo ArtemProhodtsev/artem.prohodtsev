@@ -25,7 +25,6 @@ public class T4 {
 
         List<String> carNumbers = cars.stream()
                 .filter(car -> car.getNumber() != null) //не пустые
-                .filter(car -> car.getNumber().length() == 8) //длина номера
                 .filter(car -> car.getYear() > 2010) //после 2010
                 .map(Car::getNumber)
                 .collect(Collectors.toList());
